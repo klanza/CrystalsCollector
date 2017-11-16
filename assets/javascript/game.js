@@ -16,7 +16,7 @@ var losses = 0
 
 
 
-function resetGame() {
+function startGame() {
     //Pick random number between 19-120
     chosenNumber = Math.floor(Math.random()*(120-19 + 1)) + 19;
 
@@ -28,7 +28,11 @@ function resetGame() {
 
     //Reset the score
     currentScore = 0
-
+    $("#random-value").html(chosenNumber)
+    $("#current-value").html(currentScore)
+    $("#wins").html("Wins: " + wins)
+    $("#losses").html("Losses: " + wins)
+    
     console.log(chosenNumber)
     console.log(crystalOne)
     console.log(crystalTwo)
@@ -61,3 +65,4 @@ $("#ruby").click(function() {
     console.log(currentScore)
 });
 
+startGame()
