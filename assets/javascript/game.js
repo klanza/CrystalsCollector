@@ -39,27 +39,25 @@ function resetGame() {
 
 $("#amethyst").click(function() {
     currentScore = crystalOne + currentScore
+    $("#current-value").html(currentScore)
     console.log(currentScore)
 });
 
 $("#diamond").click(function() {
     currentScore = crystalTwo + currentScore
+    $("#current-value").html(currentScore)
     console.log(currentScore)
 });
 
 $("#emerald").click(function() {
     currentScore = crystalThree + currentScore
+    $("#current-value").html(currentScore)
     console.log(currentScore)
 });
 
 $("#ruby").click(function() {
     currentScore = crystalFour + currentScore
+    $("#current-value").html(currentScore)
     console.log(currentScore)
 });
 
-// function gameButtons() {
-//     $("#amethyst").click(function() {
-//         currentScore += crystalOne
-//         console.log(currentScore)
-//     });
-// }
