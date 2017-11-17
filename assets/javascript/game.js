@@ -14,7 +14,33 @@ var currentScore = 0
 var wins = 0
 var losses = 0
 
+$("#amethyst").click(function() {
+    currentScore = crystalOne + currentScore
+    $("#current-value").html(currentScore)
+    winOrLose()
+    console.log(currentScore)
+});
 
+$("#diamond").click(function() {
+    currentScore = crystalTwo + currentScore
+    $("#current-value").html(currentScore)
+    winOrLose()
+    console.log(currentScore)
+});
+
+$("#emerald").click(function() {
+    currentScore = crystalThree + currentScore
+    $("#current-value").html(currentScore)
+    winOrLose()
+    console.log(currentScore)
+});
+
+$("#ruby").click(function() {
+    currentScore = crystalFour + currentScore
+    $("#current-value").html(currentScore)
+    winOrLose()
+    console.log(currentScore)
+});
 
 function startGame() {
     //Pick random number between 19-120
@@ -41,40 +67,18 @@ function startGame() {
 
 }
 
-function gameButtons() {
-
-    $("#amethyst").click(function() {
-        currentScore = crystalOne + currentScore
-        $("#current-value").html(currentScore)
-        console.log(currentScore)
-    });
-
-    $("#diamond").click(function() {
-        currentScore = crystalTwo + currentScore
-        $("#current-value").html(currentScore)
-        console.log(currentScore)
-    });
-
-    $("#emerald").click(function() {
-        currentScore = crystalThree + currentScore
-        $("#current-value").html(currentScore)
-        console.log(currentScore)
-    });
-
-    $("#ruby").click(function() {
-        currentScore = crystalFour + currentScore
-        $("#current-value").html(currentScore)
-        console.log(currentScore)
-    });
+function winOrLose() {
 
     if (currentScore === chosenNumber) {
         ++wins
         alert("You won!")
+        startGame()
     }
 
     if (currentScore > chosenNumber) {
         ++losses
-        Alert("Sorry, try agagin!")
+        alert("Sorry, try again!")
+        startGame()  
     }
 }
 startGame()
