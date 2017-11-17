@@ -1,5 +1,5 @@
 // Variable to store random value to be guessed
-var chosenNumber = "";
+var chosenNumber;
 
 // Variables to store random values of crystals
 var crystalOne;
@@ -31,7 +31,7 @@ function startGame() {
     $("#random-value").html(chosenNumber)
     $("#current-value").html(currentScore)
     $("#wins").html("Wins: " + wins)
-    $("#losses").html("Losses: " + wins)
+    $("#losses").html("Losses: " + losses)
     
     console.log(chosenNumber)
     console.log(crystalOne)
@@ -41,28 +41,40 @@ function startGame() {
 
 }
 
-$("#amethyst").click(function() {
-    currentScore = crystalOne + currentScore
-    $("#current-value").html(currentScore)
-    console.log(currentScore)
-});
+function gameButtons() {
 
-$("#diamond").click(function() {
-    currentScore = crystalTwo + currentScore
-    $("#current-value").html(currentScore)
-    console.log(currentScore)
-});
+    $("#amethyst").click(function() {
+        currentScore = crystalOne + currentScore
+        $("#current-value").html(currentScore)
+        console.log(currentScore)
+    });
 
-$("#emerald").click(function() {
-    currentScore = crystalThree + currentScore
-    $("#current-value").html(currentScore)
-    console.log(currentScore)
-});
+    $("#diamond").click(function() {
+        currentScore = crystalTwo + currentScore
+        $("#current-value").html(currentScore)
+        console.log(currentScore)
+    });
 
-$("#ruby").click(function() {
-    currentScore = crystalFour + currentScore
-    $("#current-value").html(currentScore)
-    console.log(currentScore)
-});
+    $("#emerald").click(function() {
+        currentScore = crystalThree + currentScore
+        $("#current-value").html(currentScore)
+        console.log(currentScore)
+    });
 
+    $("#ruby").click(function() {
+        currentScore = crystalFour + currentScore
+        $("#current-value").html(currentScore)
+        console.log(currentScore)
+    });
+
+    if (currentScore === chosenNumber) {
+        ++wins
+        alert("You won!")
+    }
+
+    if (currentScore > chosenNumber) {
+        ++losses
+        Alert("Sorry, try agagin!")
+    }
+}
 startGame()
