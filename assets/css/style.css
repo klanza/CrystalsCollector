@@ -25,3 +25,8 @@ h1 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+#game-over {
+    border: solid #000 1px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}

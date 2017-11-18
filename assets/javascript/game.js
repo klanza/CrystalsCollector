@@ -58,7 +58,15 @@ function startGame() {
     $("#current-value").html(currentScore)
     $("#wins").html("Wins: " + wins)
     $("#losses").html("Losses: " + losses)
+
+    //Clear game-over heading of text after a 3 second delay
+    // setTimeout(function(){
+    //     $("#game-over").html("");
+    //   }, 3000);
     
+    
+
+
     console.log(chosenNumber)
     console.log(crystalOne)
     console.log(crystalTwo)
@@ -71,13 +79,15 @@ function winOrLose() {
 
     if (currentScore === chosenNumber) {
         ++wins
-        alert("You won!")
+        $("#game-over").show()
+        $("#game-over").html("Congratulations, you won!").fadeOut(3000)
         startGame()
     }
 
     if (currentScore > chosenNumber) {
         ++losses
-        alert("Sorry, try again!")
+        $("#game-over").show()
+        $("#game-over").html("Sorry! Try again!").fadeOut(3000)
         startGame()  
     }
 }
